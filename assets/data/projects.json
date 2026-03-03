@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Kombi Tickets – Eswatini",
+    "desc": "A full‑stack web app for booking kombi (minibus) tickets in Eswatini. Features interactive map, real‑time seat selection, QR code tickets, and driver scanner.",
+    "image": "kombi-tickets.jpg",
+    "view": "projects/kombi-tickets.html",
+    "code": "https://github.com/Sandziso/kombi-tickets"
+  },
+  {
+    "name": "HomewareOnTap E-commerce",
+    "desc": "Full-stack e-commerce platform with admin dashboard, customer portal, and payment integration.",
+    "image": "homewareontap.jpg",
+    "view": "projects/homewareontap.html",
+    "code": "https://github.com/Sandziso/homewareontap"
+  },
+  {
+    "name": "Mlungisi Rentals",
+    "desc": "Rental property website with listings, booking system, and user authentication.",
+    "image": "mambarentals.jpg",
+    "view": "projects/mambarentals.html",
+    "code": "https://github.com/Sandziso/mambarentals"
+  },
+  {
+    "name": "CFCI Church Website",
+    "desc": "Church management system with member portal, event management, and donation system.",
+    "image": "cfci-church.jpg",
+    "view": "projects/cfci-church.html",
+    "code": "https://github.com/Sandziso/cfci-church"
+  },
+  {
+    "name": "Hardware Shop REST API",
+    "desc": "Java RESTful API for inventory management using JAX-RS and MySQL.",
+    "image": "hardware-api.jpg",
+    "view": "projects/hardware-api.html",
+    "code": "https://github.com/Sandziso/hardware-api"
+  },
+  {
+    "name": "Umsebent wemaswatii",
+    "desc": "Local services marketplace for Eswatini with mobile money integration.",
+    "image": "umsebent.jpg",
+    "view": "projects/umsebent.html",
+    "code": "https://github.com/Sandziso/umsebenti"
+  },
+  {
+    "name": "EDSA Website",
+    "desc": "Website for Eswatini Down Syndrome Association with blog and donation system.",
+    "image": "edsa-website.jpg",
+    "view": "projects/edsa-website.html",
+    "code": "https://github.com/Sandziso/edsa-website"
+  }
+]

@@ -1,1551 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Sandziso Mamba, portfolio, full stack developer, web developer, computer science" />
+  <meta name="description" content="Sandziso Mamba – Computer Science Student & Full-Stack Developer specializing in web applications and modern technologies." />
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
   <title>Sandziso Mamba | Full-Stack Developer</title>
-  <meta content="Computer Science Student & Full-Stack Developer specializing in web applications, databases, and efficient algorithms." name="description">
-  <meta content="computer science, developer, full-stack, web development, database, java, c#" name="keywords">
-  
-  <!-- Favicons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <style>
-    :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --secondary: #64748b;
-      --light: #f8fafc;
-      --dark: #0f172a;
-      --gray: #94a3b8;
-      --light-gray: #e2e8f0;
-      --success: #10b981;
-      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-      --accent: #f59e0b;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: var(--dark);
-      background-color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    
-    a {
-      text-decoration: none;
-      color: var(--primary);
-      transition: all 0.3s ease;
-    }
-    
-    a:hover {
-      color: var(--primary-dark);
-    }
-    
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    .section {
-      padding: 100px 0;
-    }
-    
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    
-    .section-title h2 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-    
-    .section-title p {
-      color: var(--secondary);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background: var(--primary);
-      color: white;
-      border-radius: 5px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-    }
-    
-    .btn:hover::before {
-      left: 100%;
-    }
-    
-    .btn:hover {
-      background: var(--primary-dark);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-    }
-    
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-    
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-    }
-    
-    /* Header Styles */
-    header {
-      background: rgba(15, 23, 42, 0.95);
-      color: white;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-    
-    header.scrolled {
-      padding: 10px 0;
-      background: rgba(15, 23, 42, 0.98);
-    }
-    
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      transition: all 0.3s ease;
-    }
-    
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-    }
-    
-    .logo span {
-      color: var(--primary);
-    }
-    
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
-    
-    .nav-links li {
-      margin-left: 30px;
-    }
-    
-    .nav-links a {
-      color: var(--light-gray);
-      font-weight: 500;
-      position: relative;
-    }
-    
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-    }
-    
-    .nav-links a:hover {
-      color: white;
-    }
-    
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    
-    .mobile-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1) 0%, rgba(15, 23, 42, 0) 70%);
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      line-height: 1.1;
-    }
-    
-    .hero h1 span {
-      color: var(--primary);
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--light-gray);
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
-    
-    .typed-text {
-      color: var(--primary);
-      font-weight: 500;
-      height: 30px;
-    }
-    
-    .social-links {
-      display: flex;
-      margin-top: 30px;
-    }
-    
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      border-radius: 50%;
-      margin-right: 15px;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-    
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-5px);
-    }
-    
-    /* About Section */
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-    }
-    
-    .about-img {
-      flex: 1;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #e2e8f0;
-      min-height: 400px;
-      position: relative;
-    }
-    
-    .about-img::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient);
-      opacity: 0.1;
-      z-index: 1;
-    }
-    
-    .about-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .about-text {
-      flex: 1;
-    }
-    
-    .about-text h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    
-    .about-text p {
-      margin-bottom: 20px;
-      color: var(--secondary);
-    }
-    
-    .personal-info {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin: 30px 0;
-    }
-    
-    .info-item {
-      display: flex;
-    }
-    
-    .info-item i {
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-right: 10px;
-      min-width: 30px;
-    }
-    
-    .info-item strong {
-      margin-right: 5px;
-    }
-    
-    /* Skills Section */
-    .skills {
-      background: var(--light);
-    }
-    
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-    
-    .skill-category {
-      background: white;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.3s ease;
-    }
-    
-    .skill-category:hover {
-      transform: translateY(-5px);
-    }
-    
-    .skill-category h3 {
-      margin-bottom: 25px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid var(--light-gray);
-    }
-    
-    .skill-item {
-      margin-bottom: 25px;
-    }
-    
-    .skill-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-    
-    .skill-bar {
-      height: 10px;
-      background: var(--light-gray);
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    
-    .skill-progress {
-      height: 100%;
-      background: var(--primary);
-      border-radius: 5px;
-      position: relative;
-      width: 0;
-      transition: width 1.5s ease-in-out;
-    }
-    
-    .skill-progress.animate {
-      animation: fillBar 1.5s ease-in-out forwards;
-    }
-    
-    @keyframes fillBar {
-      from { width: 0; }
-      to { width: var(--target-width); }
-    }
-    
-    /* Resume Section */
-    .resume-tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    
-    .resume-tab {
-      padding: 12px 30px;
-      background: white;
-      border: none;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 5px;
-      margin: 0 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    
-    .resume-tab.active, .resume-tab:hover {
-      background: var(--primary);
-      color: white;
-    }
-    
-    .resume-content {
-      background: white;
-      border-radius: 10px;
-      padding: 40px;
-      box-shadow: var(--card-shadow);
-    }
-    
-    .timeline {
-      position: relative;
-    }
-    
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 20px;
-      height: 100%;
-      width: 2px;
-      background: var(--light-gray);
-    }
-    
-    .timeline-item {
-      position: relative;
-      padding-left: 60px;
-      margin-bottom: 40px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease;
-    }
-    
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-    
-    .timeline-icon {
-      position: absolute;
-      left: 10px;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .timeline-icon::after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: white;
-    }
-    
-    .timeline-date {
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
-    
-    .timeline-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-    
-    .timeline-company {
-      color: var(--secondary);
-      font-style: italic;
-      margin-bottom: 15px;
-      display: block;
-    }
-    
-    /* Portfolio Section */
-    .portfolio-filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    
-    .portfolio-filter {
-      padding: 8px 20px;
-      margin: 5px;
-      background: white;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    
-    .portfolio-filter.active, .portfolio-filter:hover {
-      background: var(--primary);
-      color: white;
-    }
-    
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-    }
-    
-    .portfolio-item {
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: var(--card-shadow);
-      transition: all 0.3s ease;
-      background: white;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    
-    .portfolio-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .portfolio-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-    
-    .portfolio-img {
-      height: 200px;
-      background: var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray);
-      overflow: hidden;
-    }
-    
-    .portfolio-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .portfolio-item:hover .portfolio-img img {
-      transform: scale(1.1);
-    }
-    
-    .portfolio-info {
-      padding: 20px;
-    }
-    
-    .portfolio-category {
-      color: var(--primary);
-      font-weight: 500;
-      font-size: 0.9rem;
-      margin-bottom: 5px;
-    }
-    
-    .portfolio-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    
-    .portfolio-description {
-      color: var(--secondary);
-      margin-bottom: 15px;
-      font-size: 0.9rem;
-    }
-    
-    .portfolio-features {
-      list-style: none;
-      margin-bottom: 15px;
-    }
-    
-    .portfolio-features li {
-      padding: 5px 0;
-      font-size: 0.85rem;
-      color: var(--secondary);
-      position: relative;
-      padding-left: 15px;
-    }
-    
-    .portfolio-features li:before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--success);
-      font-weight: bold;
-    }
-    
-    .portfolio-link {
-      color: var(--secondary);
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-    }
-    
-    .portfolio-link i {
-      margin-left: 5px;
-      transition: transform 0.3s ease;
-    }
-    
-    .portfolio-link:hover i {
-      transform: translateX(5px);
-    }
-    
-    /* Contact Section */
-    .contact {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white;
-    }
-    
-    .contact .section-title h2 {
-      color: white;
-    }
-    
-    .contact .section-title p {
-      color: var(--light-gray);
-    }
-    
-    .contact-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
-    
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      transition: transform 0.3s ease;
-    }
-    
-    .contact-item:hover {
-      transform: translateX(10px);
-    }
-    
-    .contact-icon {
-      font-size: 1.5rem;
-      color: var(--primary);
-      min-width: 40px;
-    }
-    
-    .contact-details h3 {
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-    }
-    
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-    
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    
-    .footer-logo span {
-      color: var(--primary);
-    }
-    
-    .footer-links {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 20px;
-    }
-    
-    .copyright {
-      color: var(--light-gray);
-      font-size: 0.9rem;
-    }
-    
-    /* CV Download Button */
-    .cv-download {
-      text-align: center;
-      margin-top: 40px;
-    }
-    
-    /* Scroll to Top Button */
-    .scroll-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-    }
-    
-    .scroll-top.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .scroll-top:hover {
-      background: var(--primary-dark);
-      transform: translateY(-5px);
-    }
-    
-    /* Responsive Styles */
-    @media (max-width: 992px) {
-      .about-content {
-        flex-direction: column;
-      }
-      
-      .skills-container {
-        grid-template-columns: 1fr;
-      }
-      
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .mobile-toggle {
-        display: block;
-      }
-      
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        flex-direction: column;
-        background: var(--dark);
-        width: 100%;
-        padding: 20px 0;
-        transition: all 0.4s ease;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      
-      .nav-links.active {
-        left: 0;
-      }
-      
-      .nav-links li {
-        margin: 15px 0;
-        text-align: center;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .personal-info {
-        grid-template-columns: 1fr;
-      }
-      
-      .resume-tabs {
-        flex-direction: column;
-        gap: 10px;
-      }
-      
-      .resume-tab {
-        margin: 5px 0;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header id="header">
-    <div class="container">
-      <nav class="navbar">
-        <a href="#" class="logo">Sandziso<span>.</span></a>
-        <ul class="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="mobile-toggle">
-          <i class="bi bi-list"></i>
-        </div>
-      </nav>
+
+  <!-- Preloader -->
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <a href="#" class="logo"><i class="fas fa-code"></i> Sandziso<span>.</span></a>
+    <div class="theme-toggle" id="theme-toggle">
+      <i class="fas fa-moon"></i>
     </div>
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero section">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Sandziso Mlungisi <span>Mamba</span></h1>
-        <p>Computer Science Student & Full-Stack Developer specializing in web applications and modern technologies.</p>
-        <div class="typed-text" id="typed-text"></div>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/mlungisimamba" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/Sandziso" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="mailto:mlungisimamba01@gmail.com"><i class="bi bi-envelope"></i></a>
-        </div>
-        <a href="#contact" class="btn">Get In Touch</a>
-        <a href="#resume" class="btn btn-outline" style="margin-left: 15px;">View Resume</a>
+  <section class="home" id="home">
+    <div id="particles-js"></div>
+    <div class="content">
+      <h2>Hi There,<br/> I'm Sandziso <span>Mamba</span></h2>
+      <p>i am into <span class="typing-text"></span></p>
+      <a href="#about" class="btn"><span>About Me</span> <i class="fas fa-arrow-circle-down"></i></a>
+      <div class="socials">
+        <ul class="social-icons">
+          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/mlungisimamba" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="github" aria-label="GitHub" href="https://github.com/Sandziso" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a class="envelope" aria-label="Email" href="mailto:mlungisimamba01@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+        </ul>
       </div>
     </div>
+    
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>Computer Science student working towards specializing in full-stack development and modern web technologies.</p>
+  <section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+    <div class="row">
+      <div class="image">
+        <img draggable="false" class="tilt" src="assets/images/profile2.jpg" alt="">
       </div>
-      
-      <div class="about-content">
-        <div class="about-img" data-aos="fade-right">
-          <!-- Replace with your actual photo path -->
-          <img src="assets/images/profile.jpg" alt="Sandziso Mamba">
-        </div>
-        
-        <div class="about-text" data-aos="fade-left">
-          <h3>Computer Science Student & Full-Stack Developer</h3>
-          <p>Final-year BSc Computer Science student at Eduvos with experience in full-stack web development, RESTful API design, and modern frameworks. Skilled in developing scalable systems and optimizing databases for performance.</p>
-          
-          <div class="personal-info">
-            <div class="info-item">
-              <i class="bi bi-person"></i>
-              <div>
-                <strong>Name:</strong> Sandziso Mlungisi Mamba
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-geo-alt"></i>
-              <div>
-                <strong>Location:</strong> Eswatini
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-envelope"></i>
-              <div>
-                <strong>Email:</strong> mlungisimamba01@gmail.com
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-phone"></i>
-              <div>
-                <strong>Phone:</strong> (+268) 7854 5189
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-mortarboard"></i>
-              <div>
-                <strong>Degree:</strong> BSc Computer Science
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-translate"></i>
-              <div>
-                <strong>Languages:</strong> English, siSwati
-              </div>
-            </div>
+      <div class="content">
+        <h3>I'm Sandziso Mamba</h3>
+        <span class="tag">Full-Stack Developer</span>
+        <p>I’m a final-year CS student at Eduvos who builds real‑world applications with PHP, JavaScript, MySQL, and the MERN stack. I believe in learning by doing – every project teaches me something new.</p>
+        <p>Right now I’m deepening my knowledge of the MERN stack while exploring cybersecurity and data science. I’m fascinated by how interactive systems can solve problems, and I refuse to box myself into one niche. Whether it’s web dev, cyber, or data, I’m eager to contribute and keep growing.</p>
+        <div class="box-container">
+          <div class="box">
+            <p><span>email :</span> mlungisimamba01@gmail.com</p>
+            <p><span>place :</span> Eswatini/South Africa</p>
           </div>
-          
-          <p>I'm passionate about developing modern web applications, exploring new technologies, and contributing to open-source projects. Currently focused on full-stack development with React, Node.js, and modern databases.</p>
+          <div class="box">
+            <p><span>phone :</span> (+268) 7854 5189/(+27) 78 143 0934</p>
+            <p><span>languages :</span> English, siSwati</p>
+          </div>
+        </div>
+        <div class="resumebtn">
+          <a href="Sandziso_Mamba_CV.pdf" download class="btn"><span>Resume</span> <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Technical Skills</h2>
-        <p>My technical expertise spans multiple programming languages, frameworks, and technologies.</p>
-      </div>
-      
-      <div class="skills-container">
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-          <h3>Frontend Development</h3>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>HTML/CSS</span>
-              <span>95%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="95"></div>
-            </div>
+  <!-- Skills Section (redesigned with progress bars) -->
+  <section class="skills" id="skills">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Technical <span>Skills</span></h2>
+    <p style="text-align: center; color: var(--text-light); font-size: 1.8rem; margin-bottom: 2rem;">My technical expertise spans multiple programming languages, frameworks, and technologies.</p>
+    <div class="skills-container">
+      <!-- Frontend Development -->
+      <div class="skill-category">
+        <h3>Frontend Development</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>HTML/CSS</span>
+            <span>95%</span>
           </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>JavaScript</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>React</span>
-              <span>80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Bootstrap</span>
-              <span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90"></div>
-            </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="95"></div>
           </div>
         </div>
-        
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-          <h3>Backend & Database</h3>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Node.js</span>
-              <span>80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80"></div>
-            </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>JavaScript</span>
+            <span>85%</span>
           </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>PHP</span>
-              <span>75%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75"></div>
-            </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85"></div>
           </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>MySQL</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85"></div>
-            </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>React</span>
+            <span>80%</span>
           </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>MongoDB</span>
-              <span>70%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="70"></div>
-            </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80"></div>
           </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>Bootstrap</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Backend & Database -->
+      <div class="skill-category">
+        <h3>Backend & Database</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>Node.js</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>PHP</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>MySQL</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span>MongoDB</span>
+            <span>70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="70"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="additional-skills">
+      ⚡ Additional: MERN stack, Firebase, Java, C#, Python, and more from academic and personal projects.
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
+    <p class="quote">"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</p>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img draggable="false" src="assets/images/educat/college.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Bachelor of Science in Computer Science</h3>
+          <p>Eduvos, South Africa</p>
+          <h4>2022 - 2026 | Pursuing</h4>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="resume section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>My education and experience in computer science and web development.</p>
-      </div>
-      
-      <div class="resume-tabs">
-        <button class="resume-tab active" data-tab="education">Education</button>
-        <button class="resume-tab" data-tab="projects">Projects</button>
-      </div>
-      
-      <div class="resume-content">
-        <div class="timeline" id="education-tab">
-          <div class="timeline-item" data-aos="fade-up">
-            <div class="timeline-icon"></div>
-            <div class="timeline-date">2022 - 2026</div>
-            <h3 class="timeline-title">BSc in Computer Science</h3>
-            <span class="timeline-company">Eduvos, South Africa</span>
-            <p>Relevant Coursework: Object-Oriented Programming (C++, C#, Java), Web Development (HTML, CSS, JavaScript, PHP), Database Systems (MySQL, MongoDB, Neo4j), Data Structures and Algorithms (C#), Artificial Intelligence, Network Security, Raspberry Pi Architecture</p>
-          </div>
-        </div>
-        
-        <div class="timeline" id="projects-tab" style="display: none;">
-          <div class="timeline-item" data-aos="fade-up">
-            <div class="timeline-icon"></div>
-            <div class="timeline-date">2025</div>
-            <h3 class="timeline-title">HomewareOnTap E-commerce Platform</h3>
-            <p>Full-stack e-commerce platform with admin dashboard, customer portal, and payment integration. Built with PHP, MySQL, HTML, CSS, and JavaScript.</p>
-            <a href="projects/homewareontap.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-          
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="timeline-icon"></div>
-            <div class="timeline-date">2025</div>
-            <h3 class="timeline-title">Mlungisi Rentals</h3>
-            <p>Rental property website with property listings, booking system, and user authentication. Built with HTML, CSS, JavaScript, PHP, and MySQL.</p>
-            <a href="projects/mambarentals.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-          
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="timeline-icon"></div>
-            <div class="timeline-date">2025</div>
-            <h3 class="timeline-title">Java RESTful Web Service</h3>
-            <p>RESTful API for hardware shop inventory management using Java (JAX-RS) and MySQL. Configured with Maven and Tomcat 9.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="cv-download" data-aos="fade-up">
-        <a href="Sandziso_Mamba_CV.pdf" download class="btn btn-primary">
-          <i class="bi bi-download me-2"></i>Download Full CV
-        </a>
-      </div>
+  <!-- Projects Section -->
+  <section class="work" id="work">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+    <div class="box-container" id="projectsContainer">
+      <!-- Projects injected via JS -->
     </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Academic and personal projects showcasing my technical skills.</p>
-      </div>
-      
-      <div class="portfolio-filters">
-        <div class="portfolio-filter active" data-filter="all">All</div>
-        <div class="portfolio-filter" data-filter="web">Web Apps</div>
-        <div class="portfolio-filter" data-filter="api">APIs</div>
-        <div class="portfolio-filter" data-filter="fullstack">Full-Stack</div>
-      </div>
-      
-      <div class="portfolio-grid">
-        <div class="portfolio-item" data-category="web fullstack" data-aos="fade-up">
-          <div class="portfolio-img">
-            <img src="assets/images/projects/homewareontap.jpg" alt="HomewareOnTap E-commerce">
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-category">Web Development • Full-Stack</div>
-            <h3 class="portfolio-title">HomewareOnTap E-commerce</h3>
-            <p class="portfolio-description">Complete e-commerce platform with admin dashboard, customer portal, and payment integration.</p>
-            <ul class="portfolio-features">
-              <li>Complete CRUD operations for products</li>
-              <li>Dual dashboard system (Admin & Customer)</li>
-              <li>Secure authentication & authorization</li>
-              <li>Payment gateway integration</li>
-              <li>Inventory management system</li>
-            </ul>
-            <a href="projects/homewareontap.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="portfolio-item" data-category="web fullstack" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-img">
-            <img src="assets/images/projects/mambarentals.jpg" alt="Mlungisi Rentals">
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-category">Web Development • Full-Stack</div>
-            <h3 class="portfolio-title">Mlungisi Rentals</h3>
-            <p class="portfolio-description">Rental property website with property listings, booking system, and user authentication.</p>
-            <ul class="portfolio-features">
-              <li>Property search and filtering</li>
-              <li>User registration and authentication</li>
-              <li>Booking management system</li>
-              <li>Admin panel for property management</li>
-              <li>Responsive design for all devices</li>
-            </ul>
-            <a href="projects/mambarentals.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-img">
-            <img src="assets/images/projects/cfci-church.jpg" alt="CFCI Church Website">
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-category">Web Development</div>
-            <h3 class="portfolio-title">CFCI Church Website</h3>
-            <p class="portfolio-description">Complete church management system with member portal, event management, and donation system.</p>
-            <ul class="portfolio-features">
-              <li>Multi-role access control (Public, Member, Pastor, Admin)</li>
-              <li>Event management and registration</li>
-              <li>Donation system with payment integration</li>
-              <li>Prayer request management</li>
-              <li>Sermon and media library</li>
-            </ul>
-            <a href="projects/cfci-church.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="portfolio-item" data-category="api" data-aos="fade-up" data-aos-delay="300">
-          <div class="portfolio-img">
-            <img src="assets/images/projects/hardware-api.jpg" alt="Hardware Shop API">
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-category">API Development</div>
-            <h3 class="portfolio-title">Hardware Shop RESTful API</h3>
-            <p class="portfolio-description">Java RESTful API for inventory and user management using JAX-RS and MySQL.</p>
-            <ul class="portfolio-features">
-              <li>RESTful endpoints for CRUD operations</li>
-              <li>JAX-RS implementation with JSON data exchange</li>
-              <li>MySQL database integration</li>
-              <li>Maven project configuration</li>
-              <li>Tomcat 9 deployment</li>
-            </ul>
-            <a href="projects/hardware-api.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="portfolio-item" data-category="web fullstack" data-aos="fade-up" data-aos-delay="400">
-          <div class="portfolio-img">
-            <img src="assets/images/projects/timochi-takho.jpg" alt="Timochi Takho">
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-category">Web Development • Full-Stack</div>
-            <h3 class="portfolio-title">Timochi Takho</h3>
-            <p class="portfolio-description">Local services marketplace for Eswatini with mobile money integration.</p>
-            <ul class="portfolio-features">
-              <li>Service provider and customer matching</li>
-              <li>Mobile money payment integration</li>
-              <li>Rating and review system</li>
-              <li>Service booking and scheduling</li>
-              <li>Location-based service discovery</li>
-            </ul>
-            <a href="projects/timochi-takho.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="500">
-          <div class="portfolio-img">
-            <img src="assets/images/projects/edsa-website.jpg" alt="EDSA Website">
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-category">Web Development</div>
-            <h3 class="portfolio-title">Eswatini Down Syndrome Association</h3>
-            <p class="portfolio-description">Modern website with blog, donation system, and mobile money integration.</p>
-            <ul class="portfolio-features">
-              <li>Blog and content management system</li>
-              <li>Donation platform with mobile money</li>
-              <li>Inspiration stories and achievements</li>
-              <li>Event management and registration</li>
-              <li>Resource library for families</li>
-            </ul>
-            <a href="projects/edsa-website.html" class="portfolio-link">View Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+    <div class="viewall">
+      <a href="https://github.com/Sandziso?tab=repositories" target="_blank" class="btn"><span>View All on GitHub</span> <i class="fas fa-arrow-right"></i></a>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact section">
+  <section class="contact" id="contact">
+    <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
     <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Contact Me</h2>
-        <p>I'm available for development opportunities. Feel free to reach out!</p>
-      </div>
-      
-      <div class="contact-container">
-        <div class="contact-info" data-aos="fade-right">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="bi bi-geo-alt"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Location</h3>
-              <p>Eswatini</p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="bi bi-envelope"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Email</h3>
-              <p>mlungisimamba01@gmail.com</p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="bi bi-phone"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Call</h3>
-              <p>(+268) 7854 5189</p>
-            </div>
-          </div>
+      <div class="content">
+        <div class="image-box">
+          <img draggable="false" src="assets/images/contact1.png" alt="contact illustration">
         </div>
-        
-        <div class="contact-actions" data-aos="fade-left">
-          <a href="mailto:mlungisimamba01@gmail.com" class="btn btn-primary">Send Email</a>
-          <a href="Sandziso_Mamba_CV.pdf" download class="btn btn-outline">Download CV</a>
-        </div>
+        <form id="contact-form">
+          <div class="form-group">
+            <div class="field">
+              <input type="text" name="name" placeholder="Name" required>
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="field">
+              <input type="email" name="email" placeholder="Email" required>
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="field">
+              <input type="text" name="phone" placeholder="Phone">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="message">
+              <textarea name="message" placeholder="Message" required></textarea>
+              <i class="fas fa-comment-dots"></i>
+            </div>
+          </div>
+          <div class="button-area">
+            <button type="submit">Submit <i class="fa fa-paper-plane"></i></button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">Sandziso<span>.</span></div>
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/in/mlungisimamba" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/Sandziso" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="mailto:mlungisimamba01@gmail.com"><i class="bi bi-envelope"></i></a>
-        </div>
-        <div class="copyright">
-          &copy; 2025 Sandziso Mamba. All Rights Reserved.
+  <footer class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3><i class="fas fa-code"></i> Sandziso<span style="color:var(--primary)">.</span></h3>
+        <p>Full-stack developer passionate about building impactful web applications and exploring new technologies.</p>
+        <div class="share">
+          <a href="https://www.linkedin.com/in/mlungisimamba" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Sandziso" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/sandzi_2113" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:mlungisimamba01@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#home"><i class="fas fa-arrow-right"></i> home</a>
+        <a href="#about"><i class="fas fa-arrow-right"></i> about</a>
+        <a href="#skills"><i class="fas fa-arrow-right"></i> skills</a>
+        <a href="#education"><i class="fas fa-arrow-right"></i> education</a>
+        <a href="#work"><i class="fas fa-arrow-right"></i> projects</a>
+        <a href="#contact"><i class="fas fa-arrow-right"></i> contact</a>
+      </div>
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="mailto:mlungisimamba01@gmail.com"><i class="fas fa-envelope"></i> mlungisimamba01@gmail.com</a>
+        <a href="tel:+26878545189"><i class="fas fa-phone"></i> (+268) 7854 5189</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Eswatini</a>
+      </div>
+    </div>
+    <div class="credit">
+      &copy; 2025 <span>Sandziso Mamba</span> | all rights reserved
     </div>
   </footer>
 
-  <!-- Scroll to Top Button -->
-  <div class="scroll-top" id="scrollTop">
-    <i class="bi bi-arrow-up"></i>
-  </div>
+  <!-- Scroll to top button -->
+  <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
 
-  <!-- AOS Animation Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-
-    // Mobile navigation toggle
-    document.querySelector('.mobile-toggle').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('active');
-      this.querySelector('i').classList.toggle('bi-list');
-      this.querySelector('i').classList.toggle('bi-x');
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        
-        // Close mobile menu if open
-        if (document.querySelector('.nav-links').classList.contains('active')) {
-          document.querySelector('.nav-links').classList.remove('active');
-          document.querySelector('.mobile-toggle i').classList.toggle('bi-list');
-          document.querySelector('.mobile-toggle i').classList.toggle('bi-x');
-        }
-      });
-    });
-    
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('header');
-      const scrollTop = document.getElementById('scrollTop');
-      
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-        scrollTop.classList.add('active');
-      } else {
-        header.classList.remove('scrolled');
-        scrollTop.classList.remove('active');
-      }
-    });
-    
-    // Scroll to top functionality
-    document.getElementById('scrollTop').addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-    
-    // Tab switching for resume section
-    document.querySelectorAll('.resume-tab').forEach(tab => {
-      tab.addEventListener('click', function() {
-        // Remove active class from all tabs
-        document.querySelectorAll('.resume-tab').forEach(t => {
-          t.classList.remove('active');
-        });
-        
-        // Add active class to clicked tab
-        this.classList.add('active');
-        
-        // Get the tab to show
-        const tabToShow = this.getAttribute('data-tab');
-        
-        // Hide all tabs
-        document.querySelectorAll('.timeline').forEach(timeline => {
-          timeline.style.display = 'none';
-        });
-        
-        // Show selected tab
-        document.getElementById(`${tabToShow}-tab`).style.display = 'block';
-      });
-    });
-    
-    // Portfolio filtering
-    document.querySelectorAll('.portfolio-filter').forEach(filter => {
-      filter.addEventListener('click', function() {
-        // Remove active class from all filters
-        document.querySelectorAll('.portfolio-filter').forEach(f => {
-          f.classList.remove('active');
-        });
-        
-        // Add active class to clicked filter
-        this.classList.add('active');
-        
-        // Get the filter value
-        const filterValue = this.getAttribute('data-filter');
-        
-        // Show/hide portfolio items based on filter
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-          if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-    
-    // Typed.js effect for hero section
-    const typedTextElement = document.getElementById('typed-text');
-    const texts = [
-      "Full-Stack Developer",
-      "Web Application Specialist",
-      "Database Designer",
-      "REST API Developer",
-      "Problem Solver"
-    ];
-    
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
-    
-    function type() {
-      const currentText = texts[textIndex];
-      
-      if (isDeleting) {
-        typedTextElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
-      } else {
-        typedTextElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100;
-      }
-      
-      if (!isDeleting && charIndex === currentText.length) {
-        typingSpeed = 1000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        typingSpeed = 500;
-      }
-      
-      setTimeout(type, typingSpeed);
-    }
-    
-    // Start typing effect after page loads
-    window.addEventListener('load', () => {
-      setTimeout(type, 1000);
-    });
-    
-    // Animate skills on scroll
-    function animateSkills() {
-      const skillBars = document.querySelectorAll('.skill-progress');
-      
-      skillBars.forEach(bar => {
-        const rect = bar.getBoundingClientRect();
-        const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
-        
-        if (isInViewport && !bar.classList.contains('animate')) {
-          const width = bar.getAttribute('data-width');
-          bar.style.setProperty('--target-width', `${width}%`);
-          bar.classList.add('animate');
-        }
-      });
-    }
-    
-    // Animate timeline items on scroll
-    function animateTimelineItems() {
-      const timelineItems = document.querySelectorAll('.timeline-item');
-      
-      timelineItems.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        const isInViewport = rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0;
-        
-        if (isInViewport && !item.classList.contains('visible')) {
-          item.classList.add('visible');
-        }
-      });
-    }
-    
-    // Animate portfolio items on scroll
-    function animatePortfolioItems() {
-      const portfolioItems = document.querySelectorAll('.portfolio-item');
-      
-      portfolioItems.forEach((item, index) => {
-        const rect = item.getBoundingClientRect();
-        const isInViewport = rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0;
-        
-        if (isInViewport && !item.classList.contains('visible')) {
-          setTimeout(() => {
-            item.classList.add('visible');
-          }, index * 100);
-        }
-      });
-    }
-    
-    // Scroll event listeners for animations
-    window.addEventListener('scroll', () => {
-      animateSkills();
-      animateTimelineItems();
-      animatePortfolioItems();
-    });
-    
-    // Initialize animations on page load
-    window.addEventListener('load', () => {
-      animateSkills();
-      animateTimelineItems();
-      animatePortfolioItems();
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- Main custom script -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

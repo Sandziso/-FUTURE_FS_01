@@ -3,22 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EDSA Website - Project Details | Sandziso Mamba</title>
+  <title>Eswatini Down Syndrome Association - Project Details | Sandziso Mamba</title>
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font Awesome for dark mode toggle -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0056B3;
-      --primary-dark: #003366;
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
       --secondary: #64748b;
       --light: #f8fafc;
       --dark: #0f172a;
       --gray: #94a3b8;
       --light-gray: #e2e8f0;
       --success: #10b981;
-      --accent: #FFD700;
-      --accent-dark: #FFC107;
       --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Dark mode variables */
+    body.dark-mode {
+      --primary: #818cf8;
+      --primary-dark: #6366f1;
+      --secondary: #cbd5e1;
+      --light: #1e293b;
+      --dark: #f8fafc;
+      --gray: #334155;
+      --bg: #0f172a;
+      --text: #f1f5f9;
+      --card-bg: #1e293b;
+      --shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+      --light-gray: #334155;
     }
     
     * {
@@ -32,6 +49,7 @@
       color: var(--dark);
       background-color: var(--light);
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
     }
     
     .container {
@@ -41,10 +59,14 @@
       padding: 0 20px;
     }
     
+    /* Header */
     header {
       background: var(--dark);
       color: white;
       padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     
     .navbar {
@@ -63,6 +85,35 @@
       color: var(--primary);
     }
     
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    /* Dark mode toggle (bigger) */
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .theme-toggle:hover {
+      background: var(--primary);
+      transform: scale(1.1);
+    }
+    body.dark-mode .theme-toggle {
+      background: var(--gray);
+      color: var(--dark);
+    }
+    
     .back-btn {
       color: white;
       display: flex;
@@ -70,9 +121,10 @@
       gap: 8px;
     }
     
+    /* Project Hero */
     .project-hero {
       padding: 80px 0;
-      background: linear-gradient(135deg, #0056B3 0%, #003366 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: white;
     }
     
@@ -124,14 +176,14 @@
       color: white;
     }
     
-    .btn-accent {
-      background: var(--accent);
-      color: var(--dark);
+    .btn-outline-light {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
     }
-    
-    .btn-accent:hover {
-      background: var(--accent-dark);
-      color: var(--dark);
+    .btn-outline-light:hover {
+      background: #fff;
+      color: var(--primary);
     }
     
     .section {
@@ -163,12 +215,19 @@
       box-shadow: var(--card-shadow);
       margin-bottom: 40px;
     }
+    body.dark-mode .project-overview {
+      background: var(--card-bg);
+      color: var(--text);
+    }
     
     .role-highlight {
       background: var(--light);
       border-left: 4px solid var(--primary);
       padding: 20px;
       margin: 30px 0;
+    }
+    body.dark-mode .role-highlight {
+      background: var(--gray);
     }
     
     .tech-stack {
@@ -185,6 +244,10 @@
       font-size: 0.9rem;
       border: 1px solid var(--light-gray);
     }
+    body.dark-mode .tech-item {
+      background: var(--gray);
+      color: var(--dark);
+    }
     
     .feature-grid {
       display: grid;
@@ -200,9 +263,12 @@
       box-shadow: var(--card-shadow);
       transition: transform 0.3s ease;
     }
-    
     .feature-card:hover {
       transform: translateY(-5px);
+    }
+    body.dark-mode .feature-card {
+      background: var(--card-bg);
+      color: var(--text);
     }
     
     .feature-icon {
@@ -242,13 +308,18 @@
       box-shadow: var(--card-shadow);
       margin: 40px 0;
     }
-    
+    body.dark-mode .architecture-diagram {
+      background: var(--card-bg);
+    }
     .diagram {
       background: var(--light);
       border-radius: 10px;
       padding: 30px;
       margin: 20px 0;
       font-family: monospace;
+    }
+    body.dark-mode .diagram {
+      background: var(--gray);
     }
     
     .development-process {
@@ -258,7 +329,9 @@
       box-shadow: var(--card-shadow);
       margin: 40px 0;
     }
-    
+    body.dark-mode .development-process {
+      background: var(--card-bg);
+    }
     .process-step {
       display: flex;
       align-items: flex-start;
@@ -267,13 +340,11 @@
       padding-bottom: 30px;
       border-bottom: 1px solid var(--light-gray);
     }
-    
     .process-step:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
-    
     .step-number {
       background: var(--primary);
       color: white;
@@ -287,6 +358,7 @@
       flex-shrink: 0;
     }
     
+    /* Footer (simple) */
     footer {
       background: var(--dark);
       color: white;
@@ -305,17 +377,41 @@
       color: white;
       font-size: 1.2rem;
     }
+    
+    .copyright {
+      color: var(--light-gray);
+      margin-top: 20px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .header-right {
+        margin-left: auto;
+      }
+      .project-title { font-size: 2.2rem; }
+      .project-meta { flex-wrap: wrap; gap: 15px; }
+      .process-step { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header with dark mode toggle -->
   <header>
     <div class="container">
       <nav class="navbar">
         <a href="../index.html" class="logo">Sandziso<span>.</span></a>
-        <a href="../index.html#portfolio" class="back-btn">
-          <i class="bi bi-arrow-left"></i> Back to Portfolio
-        </a>
+        <div class="header-right">
+          <div class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </div>
+          <a href="../index.html#portfolio" class="back-btn">
+            <i class="bi bi-arrow-left"></i> Back to Portfolio
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -334,18 +430,19 @@
           <span>Non-Profit, Full-Stack, Eswatini</span>
         </div>
         <div class="meta-item">
-          <i class="bi bi-clock"></i>
-          <span>3 Months</span>
-        </div>
-        <div class="meta-item">
           <i class="bi bi-person"></i>
           <span>Sole Developer</span>
         </div>
       </div>
       <p>A comprehensive website for the Eswatini Down Syndrome Association featuring blog system, inspiration stories, donation platform with mobile money integration, and resources for families.</p>
       <div style="margin-top: 30px;">
-        <a href="https://edsa.wuaze.com" target="_blank" class="btn">Live Demo</a>
-        <a href="../index.html#contact" class="btn btn-accent" style="margin-left: 15px;">Contact Me</a>
+        <!-- GitHub link (replace with actual repo if available) -->
+        <a href="https://github.com/Sandziso/eswatini-down-syndrome" target="_blank" class="btn btn-outline-light">
+          <i class="bi bi-github"></i> View Source Code
+        </a>
+        <a href="../index.html#contact" class="btn btn-outline-light" style="margin-left: 15px;">
+          <i class="bi bi-envelope"></i> Contact Me
+        </a>
       </div>
     </div>
   </section>
@@ -668,12 +765,13 @@
         </div>
       </div>
 
-      <!-- Call to Action -->
+      <!-- Call to Action (no live demo) -->
       <div style="text-align: center; margin-top: 60px;">
-        <a href="https://edsa.wuaze.com" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
-          <i class="bi bi-eye me-2"></i>View Live Demo
+        <!-- Replace the href with the actual GitHub repo URL when available -->
+        <a href="https://github.com/Sandziso/eswatini-down-syndrome" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-github me-2"></i>View Source Code
         </a>
-        <a href="../index.html#contact" class="btn btn-accent" style="margin-left: 20px; font-size: 1.1rem; padding: 15px 40px;">
+        <a href="../index.html#contact" class="btn btn-outline" style="margin-left: 20px; font-size: 1.1rem; padding: 15px 40px;">
           <i class="bi bi-envelope me-2"></i>Discuss Project
         </a>
       </div>
@@ -692,10 +790,37 @@
         <a href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="bi bi-instagram"></i></a>
         <a href="mailto:mlungisimamba01@gmail.com"><i class="bi bi-envelope"></i></a>
       </div>
-      <div class="copyright" style="color: var(--light-gray); margin-top: 20px;">
+      <div class="copyright">
         &copy; 2025 Sandziso Mamba. All Rights Reserved.
       </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Dark mode toggle
+      const themeToggle = $('#theme-toggle');
+      const body = $('body');
+      const icon = themeToggle.find('i');
+
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.addClass('dark-mode');
+        icon.removeClass('fa-moon').addClass('fa-sun');
+      }
+
+      themeToggle.on('click', function () {
+        body.toggleClass('dark-mode');
+        if (body.hasClass('dark-mode')) {
+          icon.removeClass('fa-moon').addClass('fa-sun');
+          localStorage.setItem('dark-mode', 'enabled');
+        } else {
+          icon.removeClass('fa-sun').addClass('fa-moon');
+          localStorage.setItem('dark-mode', 'disabled');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

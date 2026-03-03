@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mamba Rentals - Project Details | Sandziso Mamba</title>
+  <title>Kombi Tickets – Eswatini | Sandziso Mamba</title>
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Font Awesome for dark mode toggle -->
@@ -301,27 +301,6 @@
       transform: scale(1.05);
     }
     
-    .architecture-diagram {
-      background: white;
-      border-radius: 10px;
-      padding: 40px;
-      box-shadow: var(--card-shadow);
-      margin: 40px 0;
-    }
-    body.dark-mode .architecture-diagram {
-      background: var(--card-bg);
-    }
-    .diagram {
-      background: var(--light);
-      border-radius: 10px;
-      padding: 30px;
-      margin: 20px 0;
-      font-family: monospace;
-    }
-    body.dark-mode .diagram {
-      background: var(--gray);
-    }
-    
     .development-process {
       background: white;
       border-radius: 10px;
@@ -356,28 +335,6 @@
       justify-content: center;
       font-weight: bold;
       flex-shrink: 0;
-    }
-    
-    .user-role-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 30px 0;
-    }
-    .role-card {
-      background: var(--light);
-      border-radius: 10px;
-      padding: 25px;
-      text-align: center;
-      border-left: 4px solid var(--primary);
-    }
-    body.dark-mode .role-card {
-      background: var(--card-bg);
-    }
-    .role-icon {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 15px;
     }
     
     /* Footer (simple) */
@@ -441,7 +398,7 @@
   <!-- Project Hero -->
   <section class="project-hero">
     <div class="container">
-      <h1 class="project-title">Mamba Rentals Eswatini</h1>
+      <h1 class="project-title">🚐 Kombi Tickets – Eswatini</h1>
       <div class="project-meta">
         <div class="meta-item">
           <i class="bi bi-calendar"></i>
@@ -449,17 +406,16 @@
         </div>
         <div class="meta-item">
           <i class="bi bi-tags"></i>
-          <span>Rental Platform, Full-Stack</span>
+          <span>React, Firebase, Full‑Stack</span>
         </div>
         <div class="meta-item">
           <i class="bi bi-person"></i>
           <span>Sole Developer</span>
         </div>
       </div>
-      <p>A comprehensive rental property platform connecting landlords and tenants across Eswatini with advanced booking systems, payment processing, and property management features.</p>
+      <p>A full‑stack web application for booking kombi (minibus) tickets in Eswatini. Users can select terminals on a map, pick a seat, receive a QR‑code ticket, and drivers can scan and validate boarding in real time.</p>
       <div style="margin-top: 30px;">
-        <!-- GitHub link (replace with actual repo if available) -->
-        <a href="https://github.com/Sandziso/rental_platform" target="_blank" class="btn btn-outline-light">
+        <a href="https://github.com/Sandziso/kombi-tickets" target="_blank" class="btn btn-outline-light">
           <i class="bi bi-github"></i> View Source Code
         </a>
         <a href="../index.html#contact" class="btn btn-outline-light" style="margin-left: 15px;">
@@ -474,33 +430,32 @@
     <div class="container">
       <h2 class="section-title">Project Overview</h2>
       <div class="project-overview">
-        <p><strong>Mamba Rentals Eswatini</strong> is a sophisticated rental property platform designed to modernize the property rental market in Eswatini. The platform connects landlords with prospective tenants, streamlines the booking process, and provides comprehensive property management tools.</p>
+        <p><strong>Kombi Tickets</strong> is a modern web platform designed to simplify kombi (minibus) travel across Eswatini. It combines an interactive map, real‑time seat selection, QR code tickets, and a driver scanner to create a seamless experience for both passengers and drivers.</p>
         
         <div class="role-highlight">
           <h3>👨‍💻 My Role: Sole Developer</h3>
           <p>I was the <strong>sole developer</strong> responsible for the entire project lifecycle:</p>
           <ul style="margin-left: 20px; margin-top: 10px;">
-            <li><strong>Full-Stack Development:</strong> Complete frontend and backend implementation</li>
-            <li><strong>Database Architecture:</strong> Designed and implemented 15+ interconnected tables</li>
-            <li><strong>UI/UX Design:</strong> Created intuitive user interfaces for all user roles</li>
-            <li><strong>Payment Integration:</strong> Implemented secure payment processing with mobile money</li>
-            <li><strong>Deployment & Hosting:</strong> Configured server environment and deployed application</li>
-            <li><strong>Testing & Quality Assurance:</strong> Comprehensive testing across all functionalities</li>
+            <li><strong>Full‑Stack Development:</strong> React frontend + Firebase backend (Firestore, Auth, Messaging)</li>
+            <li><strong>Map Integration:</strong> Leaflet + OpenStreetMap with terminal markers and GPS location</li>
+            <li><strong>Real‑Time Seats:</strong> Synced seat availability using Firestore transactions</li>
+            <li><strong>QR Code Tickets:</strong> Generated via free API and displayed for scanning</li>
+            <li><strong>Driver Scanner:</strong> Camera‑based QR validation using <code>@yudiel/react-qr-scanner</code></li>
+            <li><strong>Push Notifications:</strong> (Optional) Firebase Cloud Messaging for real‑time alerts</li>
           </ul>
         </div>
 
         <h3>Technologies Used</h3>
         <div class="tech-stack">
-          <span class="tech-item">PHP</span>
-          <span class="tech-item">MySQL</span>
-          <span class="tech-item">HTML5</span>
-          <span class="tech-item">CSS3</span>
-          <span class="tech-item">JavaScript</span>
-          <span class="tech-item">Bootstrap 5</span>
-          <span class="tech-item">PayFast Payment Gateway</span>
-          <span class="tech-item">Mobile Money Integration</span>
-          <span class="tech-item">Google Maps API</span>
-          <span class="tech-item">Hostinger Business Cloud</span>
+          <span class="tech-item">React 19</span>
+          <span class="tech-item">React Router 7</span>
+          <span class="tech-item">Firebase (Firestore, Auth, Messaging)</span>
+          <span class="tech-item">Leaflet / react-leaflet</span>
+          <span class="tech-item">OpenStreetMap / Nominatim</span>
+          <span class="tech-item">QR Server API</span>
+          <span class="tech-item">@yudiel/react-qr-scanner</span>
+          <span class="tech-item">Create React App</span>
+          <span class="tech-item">Node.js (seed scripts)</span>
         </div>
       </div>
 
@@ -510,48 +465,48 @@
         <div class="process-step">
           <div class="step-number">1</div>
           <div>
-            <h3>Requirements Analysis</h3>
-            <p>Conducted comprehensive analysis of rental market needs in Eswatini, identifying key pain points and feature requirements for landlords, tenants, and administrators.</p>
+            <h3>Requirements & Planning</h3>
+            <p>Researched kombi travel pain points in Eswatini – no digital booking, uncertainty about seat availability. Planned core features: map‑based terminal selection, real‑time seat map, QR tickets, and driver validation.</p>
           </div>
         </div>
         
         <div class="process-step">
           <div class="step-number">2</div>
           <div>
-            <h3>System Architecture</h3>
-            <p>Designed complete database schema with 15+ tables and planned the three-tier user system architecture (Admin, Landlord, Tenant) with role-based permissions.</p>
+            <h3>Firestore Data Modelling</h3>
+            <p>Designed collections: <code>terminals</code> (geo point, name), <code>vehicles</code> (with sub‑collection <code>seats</code> for real‑time status), <code>bookings</code>, <code>tickets</code>. Used composite indexes for efficient queries.</p>
           </div>
         </div>
         
         <div class="process-step">
           <div class="step-number">3</div>
           <div>
-            <h3>Frontend Development</h3>
-            <p>Built responsive user interfaces using HTML5, CSS3, JavaScript, and Bootstrap 5. Created separate dashboards for each user role with intuitive navigation.</p>
+            <h3>Map & Terminal Selection</h3>
+            <p>Integrated Leaflet map, added draggable markers for Eswatini terminals (Mbabane, Manzini, Siteki, Nhlangano). Implemented click‑to‑select origin/destination with visual feedback.</p>
           </div>
         </div>
         
         <div class="process-step">
           <div class="step-number">4</div>
           <div>
-            <h3>Backend Implementation</h3>
-            <p>Developed robust PHP backend with secure authentication, booking management, payment processing, and real-time messaging systems.</p>
+            <h3>Real‑Time Seat Selector</h3>
+            <p>Built interactive seat grid that listens to Firestore changes. Used transactions to lock seats during booking, preventing double bookings.</p>
           </div>
         </div>
         
         <div class="process-step">
           <div class="step-number">5</div>
           <div>
-            <h3>Integration & Testing</h3>
-            <p>Integrated payment gateways, implemented security measures, and conducted thorough testing across all user flows and edge cases.</p>
+            <h3>QR Ticket & Scanner</h3>
+            <p>Generated QR codes using public API, embedded in confirmation page. Built driver scanner that reads ticket ID and updates Firestore to mark ticket as used.</p>
           </div>
         </div>
         
         <div class="process-step">
           <div class="step-number">6</div>
           <div>
-            <h3>Deployment & Launch</h3>
-            <p>Configured hosting environment, deployed application, and implemented monitoring systems for ongoing maintenance and support.</p>
+            <h3>Testing & Deployment</h3>
+            <p>Tested full flow on multiple devices, deployed to Netlify with environment variables. Wrote seed scripts to populate terminals and a demo kombi.</p>
           </div>
         </div>
       </div>
@@ -560,212 +515,111 @@
       <h2 class="section-title">Key Features</h2>
       <div class="feature-grid">
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-house-check"></i>
-          </div>
-          <h3>Multi-Role Platform</h3>
-          <p>Three distinct user roles (Admin, Landlord, Tenant) with customized dashboards and functionalities.</p>
+          <div class="feature-icon"><i class="bi bi-map"></i></div>
+          <h3>Interactive Map</h3>
+          <p>Choose departure and destination terminals using Leaflet + OpenStreetMap. Map centres on user’s GPS location, with fallback to Eswatini.</p>
         </div>
-        
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-search"></i>
-          </div>
-          <h3>Advanced Property Search</h3>
-          <p>Smart filtering by location, price, amenities, and availability with geolocation support.</p>
+          <div class="feature-icon"><i class="bi bi-pin-map-fill"></i></div>
+          <h3>Terminal Markers</h3>
+          <p>Four main Eswatini terminals (Mbabane, Manzini, Siteki, Nhlangano) with draggable markers for easy selection.</p>
         </div>
-        
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-calendar-check"></i>
-          </div>
-          <h3>Booking Management</h3>
-          <p>Complete booking lifecycle from inquiry to completion with automated notifications.</p>
+          <div class="feature-icon"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+          <h3>Real‑Time Seat Selector</h3>
+          <p>Live seat availability synced with Firestore – seats become unavailable the moment they are booked.</p>
         </div>
-        
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-credit-card"></i>
-          </div>
-          <h3>Payment Processing</h3>
-          <p>Secure payment gateway with support for cards, bank transfers, and mobile money.</p>
+          <div class="feature-icon"><i class="bi bi-qr-code"></i></div>
+          <h3>QR Code Tickets</h3>
+          <p>Each booking generates a unique QR code (via free API) that passengers can show to the driver.</p>
         </div>
-        
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-chat-dots"></i>
-          </div>
-          <h3>Messaging System</h3>
-          <p>Real-time communication between landlords and tenants with file sharing capabilities.</p>
+          <div class="feature-icon"><i class="bi bi-camera"></i></div>
+          <h3>Driver Scanner</h3>
+          <p>Drivers can scan QR codes to instantly validate tickets and update booking status to <em>used</em>.</p>
         </div>
-        
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-graph-up"></i>
-          </div>
-          <h3>Analytics Dashboard</h3>
-          <p>Comprehensive reporting and analytics for property performance and financial tracking.</p>
+          <div class="feature-icon"><i class="bi bi-bell-fill"></i></div>
+          <h3>Push Notifications (Optional)</h3>
+          <p>Firebase Cloud Messaging integration for real‑time alerts about booking confirmations or driver updates.</p>
         </div>
       </div>
 
       <!-- Technical Implementation -->
       <h2 class="section-title">Technical Implementation</h2>
       <div class="project-overview">
-        <h3>Database Architecture</h3>
-        <p>Designed and implemented a comprehensive MySQL database with 15+ interconnected tables:</p>
+        <h3>Firestore Data Model</h3>
         <ul style="margin-left: 20px; margin-top: 10px;">
-          <li><strong>Users:</strong> Multi-role authentication system with profile management</li>
-          <li><strong>Properties:</strong> Complete property listings with media and amenities</li>
-          <li><strong>Bookings:</strong> Full booking lifecycle tracking with status management</li>
-          <li><strong>Payments:</strong> Secure transaction processing and financial records</li>
-          <li><strong>Reviews:</strong> Rating and feedback system with moderation</li>
-          <li><strong>Messages:</strong> Real-time communication logs between users</li>
+          <li><strong>terminals:</strong> <code>{ name, location: GeoPoint }</code></li>
+          <li><strong>vehicles:</strong> <code>{ name, totalSeats, routeId? }</code> with sub‑collection <code>seats</code> (<code>{ number, status }</code>)</li>
+          <li><strong>bookings:</strong> <code>{ userId, vehicleId, seatNumber, status, createdAt }</code></li>
+          <li><strong>tickets:</strong> <code>{ bookingId, qrData, used }</code></li>
         </ul>
 
-        <h3 style="margin-top: 30px;">Security Implementation</h3>
-        <ul style="margin-left: 20px;">
-          <li>Password hashing with bcrypt algorithm (cost 12)</li>
-          <li>CSRF token protection for all forms and actions</li>
-          <li>SQL injection prevention using prepared statements</li>
-          <li>XSS protection through comprehensive input sanitization</li>
-          <li>Secure file upload validation with type and size restrictions</li>
-          <li>Session management with automatic regeneration</li>
-        </ul>
+        <h3 style="margin-top: 30px;">Security (Firestore Rules)</h3>
+        <p>During development: open rules. For production, rules are locked to authenticated users:</p>
+        <pre style="background: var(--light); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+        </pre>
 
-        <h3 style="margin-top: 30px;">Payment System</h3>
-        <p>Integrated multiple payment methods tailored for the Eswatini market:</p>
-        <ul style="margin-left: 20px;">
-          <li>Credit/Debit card processing via PayFast gateway</li>
-          <li>Secure bank transfer integration</li>
-          <li>Mobile money support (MTN Mobile Money, Eswatini Mobile)</li>
-          <li>Automated transaction logging and receipt generation</li>
-          <li>Payment status tracking and notification system</li>
-        </ul>
+        <h3 style="margin-top: 30px;">Real‑Time Seat Booking</h3>
+        <p>Used Firestore transactions to prevent race conditions:</p>
+        <pre style="background: var(--light); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+await runTransaction(db, async (transaction) => {
+  const seatRef = doc(db, 'vehicles', kombiId, 'seats', seatNumber);
+  const seatDoc = await transaction.get(seatRef);
+  if (seatDoc.data().status !== 'available') throw 'Seat taken';
+  transaction.update(seatRef, { status: 'booked', bookingId });
+  transaction.set(bookingRef, bookingData);
+});
+        </pre>
       </div>
 
       <!-- System Architecture -->
       <h2 class="section-title">System Architecture</h2>
       <div class="architecture-diagram">
-        <h3>Multi-Tier Architecture</h3>
-        <p>The platform implements a sophisticated three-tier architecture with role-based access control:</p>
-        
         <div class="diagram">
-          <h4>User Roles & Permissions:</h4>
           <pre>
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   ADMIN PANEL   │    │ LANDLORD DASHBOARD│    │  TENANT PORTAL  │
-│                 │    │                  │    │                 │
-│ • User Management│    │ • Property Mgmt  │    │ • Property Search│
-│ • System Config  │    │ • Booking Mgmt   │    │ • Bookings      │
-│ • Reports        │    │ • Payments       │    │ • Payments      │
-│ • Security       │    │ • Communications │    │ • Communications│
-└─────────────────┘    └──────────────────┘    └─────────────────┘</pre>
-        </div>
-
-        <h3>Database Relationships</h3>
-        <p>Complex database design with proper normalization and relationships:</p>
-        <ul style="margin-left: 20px; margin-top: 10px;">
-          <li><strong>One-to-Many:</strong> Users → Properties, Users → Bookings</li>
-          <li><strong>Many-to-Many:</strong> Properties ↔ Amenities (through property_amenities)</li>
-          <li><strong>Self-Referencing:</strong> Messages for conversation threads</li>
-          <li><strong>Complex Joins:</strong> Property search with multiple criteria</li>
-        </ul>
-      </div>
-
-      <!-- Project Impact -->
-      <h2 class="section-title">Project Impact</h2>
-      <div class="project-overview">
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h3>Market Innovation</h3>
-            <p>Introduced digital solutions to modernize Eswatini's traditional rental market</p>
-          </div>
-          <div class="feature-card">
-            <h3>Efficiency Gains</h3>
-            <p>Reduced property vacancy time by 40% through automated matching systems</p>
-          </div>
-          <div class="feature-card">
-            <h3>User Satisfaction</h3>
-            <p>Achieved 95% user satisfaction with intuitive design and comprehensive features</p>
-          </div>
-          <div class="feature-card">
-            <h3>Scalable Foundation</h3>
-            <p>Built to support expansion to 10,000+ properties and 50,000+ users</p>
-          </div>
+┌─────────────────────────────────────────────────────────┐
+│                     React Frontend                        │
+│  ┌────────────┐  ┌────────────┐  ┌────────────────────┐  │
+│  │   Map      │  │ Seat Grid  │  │ QR Ticket / Scanner│  │
+│  │ (Leaflet)  │  │ (Firestore │  │                    │  │
+│  └────────────┘  │  real‑time)│  └────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+          │                   │                   │
+          ▼                   ▼                   ▼
+┌─────────────────────────────────────────────────────────┐
+│                   Firebase Backend                        │
+│  ┌────────────┐  ┌────────────┐  ┌────────────────────┐  │
+│  │  Firestore │  │    Auth    │  │  Cloud Messaging   │  │
+│  │ (terminals,│  │ (optional) │  │  (push notifs)     │  │
+│  │  vehicles, │  └────────────┘  └────────────────────┘  │
+│  │  bookings) │                                          │
+│  └────────────┘                                          │
+└─────────────────────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────┐
+│   External APIs         │
+│ • OpenStreetMap/Nominatim│
+│ • QR Server (qrserver.com)│
+└─────────────────────────┘</pre>
         </div>
       </div>
 
-      <!-- Regional Focus -->
-      <h2 class="section-title">Eswatini Regional Focus</h2>
-      <div class="project-overview">
-        <p>The platform is specifically designed for the Eswatini market with localized features:</p>
-        
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h3>Regional Coverage</h3>
-            <p>Complete coverage of all four regions: Hhohho, Manzini, Lubombo, and Shiselweni</p>
-          </div>
-          <div class="feature-card">
-            <h3>Local Payment Methods</h3>
-            <p>Integration with local mobile money providers and banking systems</p>
-          </div>
-          <div class="feature-card">
-            <h3>Cultural Considerations</h3>
-            <p>Design and features tailored to local business practices and user expectations</p>
-          </div>
-          <div class="feature-card">
-            <h3>Language Support</h3>
-            <p>Dual-language interface (English and siSwati) for broader accessibility</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Code Samples -->
-      <h2 class="section-title">Technical Implementation</h2>
-      <div class="project-overview">
-        <h3>Key Code Features</h3>
-        
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h4>Advanced Search Algorithm</h4>
-            <p>Implemented complex SQL queries with multiple JOIN operations for property filtering by location, price, amenities, and availability.</p>
-          </div>
-          <div class="feature-card">
-            <h4>Payment Processing</h4>
-            <p>Secure payment gateway integration with error handling, transaction logging, and status synchronization.</p>
-          </div>
-          <div class="feature-card">
-            <h4>Real-time Messaging</h4>
-            <p>Message system with read receipts, file attachments, and conversation threading between users.</p>
-          </div>
-          <div class="feature-card">
-            <h4>Security Implementation</h4>
-            <p>Comprehensive security measures including input validation, CSRF protection, and secure session management.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Screenshots -->
-      <h2 class="section-title">Platform Screenshots</h2>
-      <div class="screenshot-gallery">
-        <div class="screenshot">
-          <img src="../assets/images/projects/mambarentals-home.jpg" alt="Mamba Rentals Homepage">
-        </div>
-        <div class="screenshot">
-          <img src="../assets/images/projects/mambarentals-search.jpg" alt="Property Search">
-        </div>
-        <div class="screenshot">
-          <img src="../assets/images/projects/mambarentals-admin.jpg" alt="Admin Dashboard">
-        </div>
-        <div class="screenshot">
-          <img src="../assets/images/projects/mambarentals-booking.jpg" alt="Booking Process">
-        </div>
-      </div>
-
-      <!-- Call to Action (no live demo) -->
+      
+      <!-- Call to Action -->
       <div style="text-align: center; margin-top: 60px;">
-        <!-- Replace the href with the actual GitHub repo URL when available -->
-        <a href="https://github.com/Sandziso/rental_platform" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+        <a href="https://github.com/Sandziso/kombi-tickets" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
           <i class="bi bi-github me-2"></i>View Source Code
         </a>
         <a href="../index.html#contact" class="btn btn-outline" style="margin-left: 20px; font-size: 1.1rem; padding: 15px 40px;">
